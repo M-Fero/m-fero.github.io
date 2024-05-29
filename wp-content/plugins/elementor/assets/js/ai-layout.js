@@ -1,4 +1,4 @@
-/*! elementor - v3.21.0 - 18-04-2024 */
+/*! elementor - v3.21.0 - 22-05-2024 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -1478,6 +1478,10 @@ var PromptErrorMessage = function PromptErrorMessage(_ref) {
         description: (0, _i18n.__)('Try exiting Elementor and sign in again.', 'elementor'),
         buttonText: (0, _i18n.__)('Reconnect', 'elementor'),
         buttonAction: onRetry
+      },
+      file_too_large: {
+        text: /*#__PURE__*/_react.default.createElement(_ui.AlertTitle, null, (0, _i18n.__)('The file is too large.', 'elementor')),
+        description: (0, _i18n.__)('Please upload a file that is less than 4MB.', 'elementor')
       }
     };
     return messages[errMsg] || messages.default;
@@ -1615,7 +1619,7 @@ var StyledArrow = (0, _ui.styled)(_ui.Box)(function (_ref2) {
     }
   };
 });
-var upgradeBullets = [(0, _i18n.__)('Let AI build your container layouts and content with ease and radically transform the way you create websites.', 'elementor'), (0, _i18n.__)('Generate your website\'s text or create custom code without having to write a single line yourself.', 'elementor'), (0, _i18n.__)('Effortlessly create or enhance stunning images and bring your ideas to life.', 'elementor'), (0, _i18n.__)('Access 30-days of AI History with the AI Starter plan and 90-days with the Power plan.', 'elementor')];
+var upgradeBullets = [(0, _i18n.__)('Get spot-on suggestions from AI Copilot and AI Context with appropriate designs, layouts, and content for your business.', 'elementor'), (0, _i18n.__)('Generate professional texts about any topic, in any tone.', 'elementor'), (0, _i18n.__)('Effortlessly create or enhance stunning images and bring your ideas to life.', 'elementor'), (0, _i18n.__)('Unleash infinite possibilities with the custom code generator.', 'elementor'), (0, _i18n.__)('Access 30-days of AI History with the AI Starter plan and 90-days with the Power plan.', 'elementor')];
 var Chip = (0, _ui.styled)(_ui.Chip)(function () {
   return {
     '& .MuiChip-label': {
@@ -1681,7 +1685,7 @@ var UpgradeChip = function UpgradeChip(_ref3) {
   }), /*#__PURE__*/_react.default.createElement(_ui.Typography, {
     variant: "h5",
     color: "text.primary"
-  }, (0, _i18n.__)('Maximize Your Access to Elementor AI', 'elementor')), /*#__PURE__*/_react.default.createElement(_ui.List, {
+  }, (0, _i18n.__)('Unlimited access to Elementor AI', 'elementor')), /*#__PURE__*/_react.default.createElement(_ui.List, {
     sx: {
       mb: 1
     }
@@ -1766,7 +1770,17 @@ var VoicePromotionAlert = function VoicePromotionAlert(props) {
       }
     }),
     onClose: markAsViewed
-  }, __('Get improved results from AI by adding some personal context. Go to Site Settings > AI Context to get started.')));
+  }, __('Get improved results from AI by adding personal context.', 'elementor'), /*#__PURE__*/_react.default.createElement(_ui.Link, {
+    onClick: function onClick() {
+      return $e.route('panel/global/menu');
+    },
+    className: "elementor-clickable",
+    style: {
+      textDecoration: 'none'
+    },
+    color: "info.main",
+    href: "#"
+  }, __('Let’s do it', 'elementor'))));
 };
 exports.VoicePromotionAlert = VoicePromotionAlert;
 VoicePromotionAlert.propTypes = {
@@ -5978,17 +5992,16 @@ var GetStarted = function GetStarted(_ref) {
     direction: "row",
     gap: 1.5,
     alignItems: "flex-start"
-  }, /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
-    id: "e-ai-terms-approval",
-    color: "secondary",
-    sx: {
-      p: 0
-    },
-    onChange: function onChange() {
+  }, /*#__PURE__*/_react.default.createElement(_ui.InputLabel, {
+    onClick: function onClick() {
       return setIsTermsChecked(function (prevState) {
         return !prevState;
       });
     }
+  }, /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
+    id: "e-ai-terms-approval",
+    color: "secondary",
+    checked: isTermsChecked
   }), /*#__PURE__*/_react.default.createElement(_ui.Stack, null, /*#__PURE__*/_react.default.createElement(_ui.Typography, {
     variant: "caption",
     sx: {
@@ -6004,7 +6017,7 @@ var GetStarted = function GetStarted(_ref) {
     href: "https://go.elementor.com/ai-privacy-policy/",
     target: "_blank",
     color: "info.main"
-  }, (0, _i18n.__)('Privacy Policy', 'elementor')), (0, _i18n.__)(' of the Elementor AI service.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), (0, _i18n.__)('This includes consenting to the collection and use of data to improve user experience.', 'elementor')))), /*#__PURE__*/_react.default.createElement(_ui.Button, {
+  }, (0, _i18n.__)('Privacy Policy', 'elementor')), (0, _i18n.__)(' of the Elementor AI service.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), (0, _i18n.__)('This includes consenting to the collection and use of data to improve user experience.', 'elementor'))))), /*#__PURE__*/_react.default.createElement(_ui.Button, {
     disabled: !isTermsChecked,
     variant: "contained",
     onClick: onGetStartedClick,
